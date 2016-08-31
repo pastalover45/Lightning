@@ -11,6 +11,8 @@ int r = (int)(Math.random()*255);
 int b = (int)(Math.random()*255);
 int g = (int)(Math.random()*255);
 
+int cloudX =10;
+
 void setup()
 {
   size(300,300);
@@ -22,8 +24,21 @@ void setup()
 
 void draw()
 {
-	stroke(r,g,b);
+		//draws gray clouds across the top	
+		while (cloudX < 350)
+		{
+		
+			cloudX = cloudX + 50;
 
+		noStroke();
+		fill (169,169,169);
+		ellipse(cloudX - 50,10,70,50);
+
+		}
+
+
+	// randomizes the color of the lightning
+	stroke(r,g,b);
 
 	while (endX < 300)
 	{
@@ -31,13 +46,13 @@ void draw()
 
 		endY = startY + (int)((Math.random()*18)-9);
 
-		line(startX,startY,endX,endY);
+		//line(startX,startY,endX,endY);
+		line(startY,startX,endY,endX);
 
 		startX = endX;
 		startY = endY;
 
 	}
-
 
 }
 
@@ -50,7 +65,7 @@ void mousePressed()
  	 g = (int)(Math.random()*255);
 
 	startX = 0;
- 	startY = mouseY;
+ 	startY = mouseX;
  	endX = 0;
  	endY = 150;
 
