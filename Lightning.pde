@@ -30,7 +30,7 @@ void draw()
 {
 
 	 background(0,0,0);
- 	 person1();
+ 	 runningPerson();
 
 	// randomizes the color of the lightning
 	stroke(r,g,b);
@@ -57,7 +57,7 @@ void draw()
 
 
 
-void person1()
+void runningPerson()
 {
 	//arms
 	strokeWeight(3);
@@ -77,6 +77,7 @@ void person1()
 
 	//facial expressions
 	stroke(0,0,0);
+	fill(250,250,250);
 	ellipse(36+y, 35+200, 9,9);
 	ellipse(23+y, 35+200, 9,9);
 
@@ -87,11 +88,11 @@ void person1()
 
 
 // when person gets off the screen, will come back 
-		y = y + 10;
+		y = y + 8;
 
 	if (y < 20)
 	{
-		y = y + 10;
+		y = y + 8;
 	}
 	else if (y > 250)
 	{
