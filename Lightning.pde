@@ -14,7 +14,7 @@ int g = (int)(Math.random()*255);
 int cloudX =10;
 
 int x = 100;
-int y = 20;
+int y = 0;
 
 
 
@@ -31,19 +31,6 @@ void draw()
 
 	 background(0,0,0);
  	 person1();
-
-		//draws gray clouds across the top	
-		while (cloudX < 350)
-		{
-		
-			cloudX = cloudX + 50;
-
-		noStroke();
-		fill (169,169,169);
-		ellipse(cloudX - 50,10,70,50);
-
-		}
-
 
 	// randomizes the color of the lightning
 	stroke(r,g,b);
@@ -64,8 +51,9 @@ void draw()
 
 	}
 	
-	
 }
+
+
 
 
 
@@ -89,10 +77,6 @@ void person1()
 
 	//facial expressions
 	stroke(0,0,0);
-	//arc(36, 39, 8, 7, PI/4, 7*PI/4);
-	// line(36+y, 35+200, 36+y,43+200);
-	// line(23+y, 35+200, 23+y,43+200);
-	fill(255,255,255);
 	ellipse(36+y, 35+200, 9,9);
 	ellipse(23+y, 35+200, 9,9);
 
@@ -102,32 +86,21 @@ void person1()
 
 
 
-	if (y == 20)
+// when person gets off the screen, will come back 
+		y = y + 10;
+
+	if (y < 20)
 	{
 		y = y + 10;
 	}
-	else if (y==300)
-
+	else if (y > 250)
 	{
-		y=y-10;
+		y = 250 - y ;
+
 
 	}
 
-	// y= y + 10;
-
-	// 	if (y > 200)
-	// 	{
-	// 		y = y - 10;
-	// 	}
-		
-	// else if (y < 10)
-	// 	{
-	// 		y= y + 10;	
-	// 	}
-
 }
-
-
 
 
 
@@ -143,7 +116,61 @@ void mousePressed()
  	endX = 0;
  	endY = 150;
 
-
-
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//I think if I want a while loop, i dont know if i can have a background =3=
+
+// void clouds()
+// {
+// 		//draws gray clouds across the top	
+// 		while (cloudX < 350)
+// 		{
+		
+// 			cloudX = cloudX + 50;
+
+// 		noStroke();
+// 		fill (169,169,169);
+// 		ellipse(cloudX - 50,10,70,50);
+
+// 		}
+
+// }
+
+
+
+
+
+
+	//y= 		
+		//y = y - 10;
+
+
+	// y= y + 10;
+
+	// 	if (y > 200)
+	// 	{
+	// 		y = y - 10;
+	// 	}
+		
+	// else if (y < 10)
+	// 	{
+	// 		y= y + 10;	
+	// 	}
